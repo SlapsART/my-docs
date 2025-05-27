@@ -1,0 +1,11 @@
+/* src/styles/global.css */
+
+:root {
+  color-scheme: light !important;
+  background-color: #fff !important;
+}
+
+html, body {
+  background-color: #fff !important;
+  color: #000 !important;
+}
