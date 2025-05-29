@@ -5,56 +5,9 @@ description: Vista previa interactiva de los botones
 
 import ThemeWrapper from '../../../components/ThemeWrapper';
 import ButtonPreview from '../../../components/previews/ButtonPreview.tsx?client:only=react';
+import ButtonPreviewWrapper from '../../../components/previews/ButtonPreviewWrapper.astro';
 
-# Botones
-Nos hemos enfocado en plasmar nuestros colores y formas institucionales para cada una de nuestras interfaces.
+<ButtonPreviewWrapper />  
 
-:::note
-Para usar nuestro botón usa el siguiente fragmento:
-
-```sh
-import * as React from 'react';
-import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
-
-export default function BasicButtons() {
-  return (
-    <Stack spacing={2} direction="row">
-      <Button variant="text">Text</Button>
-      <Button variant="contained">Contained</Button>
-      <Button variant="outlined">Outlined</Button>
-    </Stack>
-  );
-}
-```
-
-:::
-Aquí puedes ver una vista previa interactiva de los botones de MUI:
-
-:::tip[Nuestras variantes]
-Preview del componente:
-<ButtonPreview />
-:::
-
-:::caution
-If you are not sure you want an awesome docs site, think twice before using [Starlight](/).
-:::
-
-:::danger
-Your users may be more productive and find your product easier to use thanks to helpful Starlight features.
-
-- Clear navigation
-- User-configurable colour theme
-- [i18n support](/guides/i18n/)
-
-:::
-
-
-```diff lang="js"
-  function thisIsJavaScript() {
-    // This entire block gets highlighted as JavaScript,
-    // and we can still add diff markers to it!
--   console.log('Old code to be removed')
-+   console.log('New and shiny code!')
-  }
-```
+## Hola soy valentina
+Hola si soy
