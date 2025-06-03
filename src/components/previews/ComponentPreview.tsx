@@ -144,7 +144,16 @@ export default function ComponentPreview({
                 <CloseIcon fontSize="small" />
               </IconButton>
             </Tooltip>
-            <Box sx={{ flex: 1, overflowY: 'auto', paddingLeft: 2 }}>
+            <Box
+              sx={{
+                flex: 1,
+                overflowY: 'auto',
+                pr: 1,
+                // Oculta la barra de scroll pero permite el scroll
+                scrollbarWidth: 'none', // Firefox
+                '&::-webkit-scrollbar': { display: 'none' }, // Chrome/Safari/Edge
+              }}
+            >
               {controls.map((control) => (
                 <FormControl key={control.name} component="fieldset" sx={{ mb: 3 }}>
                   <FormLabel
