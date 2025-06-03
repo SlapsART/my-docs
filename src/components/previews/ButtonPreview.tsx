@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button, ThemeProvider } from '@mui/material';
 import ComponentPreview from './ComponentPreview';
-import ThemeWrapper from '../ThemeWrapper';
+import { createCustomTheme } from '../../theme/customTheme';
 
 const controls = [
   {
@@ -34,25 +34,33 @@ const controls = [
 ];
 
 export default function ButtonPreview() {
+  // Detecta el modo actual de Starlight usando prefers-color-scheme
+  const prefersDark =
+    typeof window !== 'undefined'
+      ? window.matchMedia('(prefers-color-scheme: dark)').matches
+      : false;
+  const mode = prefersDark ? 'dark' : 'light';
+  const theme = createCustomTheme(mode);
+
   return (
-    <ThemeWrapper mode="light">
-      <ComponentPreview
-        controls={controls}
-        generateComponent={(props) => (
+    <ComponentPreview
+      controls={controls}
+      generateComponent={(props) => (
+        <ThemeProvider theme={theme}>
           <Button
-            variant={props.variant}
-            color={props.color as any}
-            size={props.size as any}
+            variant={props.variant as 'contained' | 'text' | 'outlined'}
+            color={props.color as 'primary' | 'secondary' | 'inherit'}
+            size={props.size as 'small' | 'medium' | 'large'}
           >
             Texto botón
           </Button>
-        )}
-        generateCode={(props) =>
-          `<Button variant="${props.variant}" color="${props.color}" size="${props.size}">
+        </ThemeProvider>
+      )}
+      generateCode={(props) =>
+        `<Button variant="${props.variant}" color="${props.color}" size="${props.size}">
   Texto botón
 </Button>`
-        }
-      />
-    </ThemeWrapper>
+      }
+    />
   );
 }
