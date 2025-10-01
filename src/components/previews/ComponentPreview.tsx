@@ -218,7 +218,7 @@ export default function ComponentPreview({
               justifyContent: 'flex-end',
               pr: 1,
               pt: 1,
-              bgcolor: '#23284a',
+              //bgcolor: '#23284a',
             }}
           >
             <Tooltip title="Mostrar controles">
